@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Food Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <h1>Food Delivery</h1>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order Now</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h2>Delicious Food Delivered Fast</h2>
+            <p>Choose from our exclusive menu and get your food delivered in no time.</p>
+            <button onclick="scrollToOrder()">Order Now</button>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="Images/WhatsApp Image 2024-09-20 at 10.56.23 AM (2).jpeg" alt="Pizza">
+                <h3>Pizza</h3>
+                <p>Classic Italian pizza topped with fresh ingredients.</p>
+                <p>399 only</p>
+            </div>
+            <div class="menu-item">
+                <img src="Images/New Project (2).jpg" alt="Burger">
+                <h3>Burger</h3>
+                <p>250 only</p>
+            </div>
+            
+            </div>
+            <div class="menu-item">
+                <img src="Images/WhatsApp Image 2024-09-20 at 10.56.23 AM.jpeg" alt="Salad">
+                <h3>Salad</h3>
+                <p>Fresh garden salad with your choice of dressing.</p>
+                <p>99 only</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order">
+        <h2>Place Your Order</h2>
+        <form id="order-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="food">Select Food:</label>
+            <select id="food" name="food" required>
+                <option value="pizza">Pizza - 399</option>
+                <option value="burger">Burger - 250</option>
+                <option value="salad">Salad - 99</option>
+            </select>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+            <button type="submit">Order Now</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Food Delivery. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    
+function scrollToOrder() {
+    document.getElementById("order").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// Handle form submission
+document.getElementById("order-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const name = document.getElementById("name").value;
+    const food = document.getElementById("food").value;
+    const quantity = document.getElementById("quantity").value;
+    
+    alert(`Thank you ${name}! You have ordered ${quantity} ${food}(s).`);
+});
+
+    </script>
+</body>
+</html>
